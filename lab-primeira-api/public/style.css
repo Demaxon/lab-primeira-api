@@ -1,0 +1,71 @@
+/* === 2.3.1 Sintaxe CSS e 2.3.5 Media Queries === */
+/* Transição suave ao passar o mouse nos cards */
+.indicador-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.indicador-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Responsividade do Formulário Interno do Dashboard */
+@media (max-width: 768px) {
+    .form-group-custom {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (min-width: 769px) {
+
+    .form-group-custom {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+    }
+}
+
+/* === ANIMAÇÕES (@keyframes) === */
+/* 1. Fade In Simples (Usado no Header) */
+.animacao-fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* 2. Slide Up (Desliza de baixo para cima suavemente) */
+.animacao-slide-up {
+    opacity: 0;
+    /* Começa invisível */
+    animation: slideUp 0.8s ease-out forwards;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animação para linhas novas na tabela */
+.linha-nova {
+    animation: fadeIn 0.5s ease-in-out;
+    background-color: #e8f5e9 !important;
+    /* Verde bem claro */
+    transition: background-color 2s ease;
+}
